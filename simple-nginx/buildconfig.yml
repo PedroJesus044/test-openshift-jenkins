@@ -23,7 +23,7 @@ spec:
   nodeSelector: null
   output:
     to:
-      kind: DockerImage
+      kind: ImageStreamTag
       name: 'custom-nginx:latest'
   resources: {}
   successfulBuildsHistoryLimit: 5
