@@ -17,7 +17,7 @@ pipeline {
               sh '''
                   #oc start-build --from-build=<build_name>
                   #oc start-build -F red-api --from-dir=./api/
-                  oc aaply ./devfile-sample-python-basic/*.yaml
+                  oc apply ./devfile-sample-python-basic/*.yaml
               '''
             }
         }
