@@ -17,7 +17,7 @@ pipeline {
               sh '''
                   #oc start-build --from-build=<build_name>
                   #oc start-build -F red-api --from-dir=./api/
-                  oc apply -f ./simple-nginx
+                  oc new-app nginx:1.20~https://github.com/sclorg/nginx-container.git --context-dir=1.20/test/test-app/
               '''
             }
         }
