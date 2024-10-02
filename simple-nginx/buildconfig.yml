@@ -4,6 +4,7 @@ kind: BuildConfig
 #   labels:
 #     app.kubernetes.io/name: red-api # your application name
 #   name: red-api # your application name
+namespace: "pibarrap044-dev"
 spec:
   output:
     to:
