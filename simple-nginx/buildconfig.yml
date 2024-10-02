@@ -3,17 +3,51 @@ kind: BuildConfig
 metadata:
   namespace: pibarrap044-dev
   name: 'nginx-simple-build'
+# spec:
+#   output:
+#     to:
+#       kind: DockerImage
+#       name: custom-nginx:latest # add yourimage
+#   source:
+#     # Expect a local directory to be streamed to OpenShift as a build source
+#     type: Binary
+#     binary: {}
+#   strategy:
+#     type: Docker
+#     dockerStrategy:
+#       # Find the image build instructions in./Dockerfile
+#       dockerfilePath: Dockerfile
+
+
 spec:
+  nodeSelector: null
   output:
     to:
-      kind: DockerImage
-      name: custom-nginx:latest # add yourimage
-  source:
-    # Expect a local directory to be streamed to OpenShift as a build source
-    type: Binary
-    binary: {}
+      kind: ImageStreamTag
+      name: 'custom-nginx:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
   strategy:
     type: Docker
     dockerStrategy:
-      # Find the image build instructions in./Dockerfile
       dockerfilePath: Dockerfile
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/PedroJesus044/test-openshift-jenkins.git'
+    contextDir: simple-nginx
+  # triggers:
+  #   - type: Generic
+  #     generic:
+  #       secretReference:
+  #         name: owncloud-openshift-docker-git-generic-webhook-secret
+  #   - type: GitHub
+  #     github:
+  #       secretReference:
+  #         name: owncloud-openshift-docker-git-github-webhook-secret
+  #   - type: ConfigChange
+  # runPolicy: Serial
+status:
+  lastVersion: 1
