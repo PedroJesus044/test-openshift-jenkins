@@ -8,7 +8,7 @@ spec:
   output:
     to:
       kind: DockerImage
-      name: pibarrap044/pythonclass:latest # add yourimage
+      name: custom-nginx:latest # add yourimage
   source:
     # Expect a local directory to be streamed to OpenShift as a build source
     type: Binary
