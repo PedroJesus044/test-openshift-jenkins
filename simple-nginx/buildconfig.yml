@@ -48,6 +48,6 @@ spec:
   #       secretReference:
   #         name: owncloud-openshift-docker-git-github-webhook-secret
   #   - type: ConfigChange
-  # runPolicy: Serial
+  runPolicy: Serial
 status:
   lastVersion: 1
