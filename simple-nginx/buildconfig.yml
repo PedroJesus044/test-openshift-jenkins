@@ -1,4 +1,4 @@
-apiVersion: build.OpenShift.io/v1
+apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   namespace: pibarrap044-dev
