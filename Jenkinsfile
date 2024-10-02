@@ -17,7 +17,7 @@ pipeline {
               sh '''
                   #oc start-build --from-build=<build_name>
                   #oc start-build -F red-api --from-dir=./api/
-                  oc apply -f ./devfile-sample-python-basic
+                  oc apply -f ./simple-nginx
               '''
             }
         }
