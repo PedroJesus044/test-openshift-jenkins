@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: hello-openshift
+  namespace: pibarrap044-dev
+  labels: {}
+spec:
+  to:
+    kind: Service
+    name: hello-openshift
+  tls: {}
+  port:
+    targetPort: hello-openshift
+  alternateBackends: []
