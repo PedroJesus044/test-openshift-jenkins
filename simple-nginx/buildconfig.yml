@@ -2,7 +2,7 @@ apiVersion: build.OpenShift.io/v1
 kind: BuildConfig
 metadata:
   namespace: pibarrap044-dev
-  name: ''
+  name: 'nginx-simple-build'
 spec:
   output:
     to:
