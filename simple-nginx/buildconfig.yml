@@ -1,10 +1,8 @@
 apiVersion: build.OpenShift.io/v1
 kind: BuildConfig
-# metadata:
-#   labels:
-#     app.kubernetes.io/name: red-api # your application name
-#   name: red-api # your application name
-namespace: "pibarrap044-dev"
+metadata:
+  namespace: pibarrap044-dev
+  name: ''
 spec:
   output:
     to:
