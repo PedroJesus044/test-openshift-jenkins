@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: hello-openshift
-        image: custom-nginx:latest
+        #image: custom-nginx:latest
+        image: registry.redhat.io/rhel9/python-312
         command: ["/usr/libexec/s2i/run"]
         ports:
         - containerPort: 8080
