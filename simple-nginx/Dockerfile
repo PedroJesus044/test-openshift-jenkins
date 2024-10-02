@@ -1,1 +1,1 @@
-FROM registry.redhat.io/rhel9/python-312@sha256:d194c3b07189cddc32d91efb420da19ed0c92767d47abfce4d65f269dc16f1c6
+FROM registry.redhat.io/rhel9/python-312
