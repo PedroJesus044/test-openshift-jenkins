@@ -14,12 +14,12 @@ pipeline {
         }
         stage("Openshift Apply") {
             steps {
-                oc apply -f ./simple-nginx
+                sh 'oc apply -f ./simple-nginx'
             }
         }
         stage("Openshift Build") {
             steps {
-                oc start-build hello-openshift
+                sh 'oc start-build hello-openshift'
             //   sh '''
             //       #oc start-build --from-build=<build_name>
             //       #oc start-build -F red-api --from-dir=./api/
@@ -30,7 +30,7 @@ pipeline {
         }
         stage("Openshift rollout") {
             steps {
-                oc rollout hello-openshift
+                sh 'oc rollout hello-openshift'
             }
         }
     }
