@@ -12,11 +12,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage("Openshift Apply") {
-            steps {
-                sh 'oc apply -f ./simple-nginx'
-            }
-        }
         stage("Openshift Build") {
             steps {
                 sh 'oc start-build hello-openshift'
@@ -26,6 +21,11 @@ pipeline {
             //       oc start-build hello-openshift
                   
             //   '''
+            }
+        }
+        stage("Openshift Apply") {
+            steps {
+                sh 'oc apply -f ./simple-nginx'
             }
         }
     }
