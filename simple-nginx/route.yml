@@ -8,7 +8,9 @@ spec:
   to:
     kind: Service
     name: hello-openshift
-  tls: {}
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow
   port:
     targetPort: hello-openshift
   alternateBackends: []
