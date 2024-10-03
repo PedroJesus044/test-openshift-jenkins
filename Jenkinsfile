@@ -30,7 +30,7 @@ pipeline {
         }
         stage("Openshift rollout") {
             steps {
-                sh 'oc rollout hello-openshift'
+                sh 'oc rollout latest hello-openshift'
             }
         }
     }
