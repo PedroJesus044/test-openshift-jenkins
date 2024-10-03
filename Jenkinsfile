@@ -28,10 +28,5 @@ pipeline {
             //   '''
             }
         }
-        stage("Openshift rollout") {
-            steps {
-                sh 'oc set triggers dc/hello-openshift --from-image="image-registry.openshift-image-registry.svc:5000/pibarrap044-dev/custom-nginx"'
-            }
-        }
     }
 }
