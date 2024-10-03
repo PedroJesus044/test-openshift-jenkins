@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: hello-openshift
-        image: image-registry.openshift-image-registry.svc:5000/pibarrap044-dev/custom-nginx@sha256:7663632eefb4fc974355df7a95315b6452d5433b36bc46f6ccaf2932d55eb7e6
+        image: image-registry.openshift-image-registry.svc:5000/pibarrap044-dev/custom-nginx
+        #image: image-registry.openshift-image-registry.svc:5000/pibarrap044-dev/custom-nginx@sha256:7663632eefb4fc974355df7a95315b6452d5433b36bc46f6ccaf2932d55eb7e6
         #image: registry.access.redhat.com/ubi9/python-312
         command: ["/usr/libexec/s2i/run"]
         ports:
