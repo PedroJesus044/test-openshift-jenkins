@@ -23,7 +23,7 @@ spec:
     type: Git
     git:
       uri: 'https://github.com/PedroJesus044/test-openshift-jenkins.git'
-    contextDir: /
+    contextDir: simple-nginx
   # triggers:
   #   - type: Generic
   #     generic:
