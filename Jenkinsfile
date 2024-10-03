@@ -12,14 +12,25 @@ pipeline {
                 checkout scm
             }
         }
-        stage("Docker Build") {
+        stage("Openshift Apply") {
             steps {
-              sh '''
-                  #oc start-build --from-build=<build_name>
-                  #oc start-build -F red-api --from-dir=./api/
-                  oc apply -f ./simple-nginx
-                  oc start-build hello-openshift
-              '''
+                oc apply -f ./simple-nginx
+            }
+        }
+        stage("Openshift Build") {
+            steps {
+                oc start-build hello-openshift
+            //   sh '''
+            //       #oc start-build --from-build=<build_name>
+            //       #oc start-build -F red-api --from-dir=./api/
+            //       oc start-build hello-openshift
+                  
+            //   '''
+            }
+        }
+        stage("Openshift rollout") {
+            steps {
+                oc rollout hello-openshift
             }
         }
     }
