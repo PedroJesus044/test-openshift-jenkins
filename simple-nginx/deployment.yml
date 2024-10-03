@@ -24,16 +24,16 @@ spec:
     git:
       uri: 'https://github.com/PedroJesus044/test-openshift-jenkins.git'
     contextDir: /
-  triggers:
-    - type: Generic
-      generic:
-        secretReference:
-          name: test-openshift-jenkins-git-generic-webhook-secret
-    - type: GitHub
-      github:
-        secretReference:
-          name: test-openshift-jenkins-git-github-webhook-secret
-    - type: ConfigChange
+  # triggers:
+  #   - type: Generic
+  #     generic:
+  #       secretReference:
+  #         name: test-openshift-jenkins-git-generic-webhook-secret
+  #   - type: GitHub
+  #     github:
+  #       secretReference:
+  #         name: test-openshift-jenkins-git-github-webhook-secret
+  #   - type: ConfigChange
   runPolicy: Serial
 status:
   lastVersion: 1
