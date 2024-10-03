@@ -1,1 +1,1 @@
-FROM registry.redhat.io/rhel9/python-312
+FROM rhel9/nginx-120

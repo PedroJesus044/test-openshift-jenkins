@@ -1,24 +1,10 @@
-apiVersion: build.openshift.io/v1
 kind: BuildConfig
+apiVersion: build.openshift.io/v1
 metadata:
+  name: hello-openshift
   namespace: pibarrap044-dev
-  name: 'nginx-simple-build'
-# spec:
-#   output:
-#     to:
-#       kind: DockerImage
-#       name: custom-nginx:latest # add yourimage
-#   source:
-#     # Expect a local directory to be streamed to OpenShift as a build source
-#     type: Binary
-#     binary: {}
-#   strategy:
-#     type: Docker
-#     dockerStrategy:
-#       # Find the image build instructions in./Dockerfile
-#       dockerfilePath: Dockerfile
-
-
+  labels:
+    app: hello-openshift
 spec:
   nodeSelector: null
   output:
@@ -42,11 +28,11 @@ spec:
   #   - type: Generic
   #     generic:
   #       secretReference:
-  #         name: owncloud-openshift-docker-git-generic-webhook-secret
+  #         name: test-openshift-jenkins-git-generic-webhook-secret
   #   - type: GitHub
   #     github:
   #       secretReference:
-  #         name: owncloud-openshift-docker-git-github-webhook-secret
+  #         name: test-openshift-jenkins-git-github-webhook-secret
   #   - type: ConfigChange
   runPolicy: Serial
 status:
