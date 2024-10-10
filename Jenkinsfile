@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+    openshift.withCluster( 'https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443', 'sha256~k9MWJl8gpbC3HqAh5L0J_boIRb66GBzt9eRnExjMYl0' ) {
+    openshift.withProject( 'pibarrap044-dev' ) {
+        echo "Hello from project ${openshift.project()} in cluster ${openshift.cluster()}"
+    }
+    }
+
     stages {
         stage('Hello') {
             steps {
@@ -15,11 +21,7 @@ pipeline {
 
         stage("Openshift remote execution 1") {
             steps {
-                openshift.withCluster( 'https://api.sandbox-m2.ll9k.p1.openshiftapps.com:6443', 'sha256~k9MWJl8gpbC3HqAh5L0J_boIRb66GBzt9eRnExjMYl0' ) {
-                    openshift.withProject( 'pibarrap044-dev' ) {
-                        echo "Hello from project ${openshift.project()} in cluster ${openshift.cluster()}"
-                    }
-                }
+
             }
         }
 
