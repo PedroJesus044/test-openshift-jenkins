@@ -13,16 +13,16 @@ pipeline {
             }
         }
 
-        stage("Openshift Apply") {
-            steps {
-                sh 'oc apply -f ./simple-nginx'
-            }
-        }
+        // stage("Openshift Apply") {
+        //     steps {
+        //         sh 'oc apply -f ./simple-nginx'
+        //     }
+        // }
 
-        stage("Openshift Build") {
-            steps {
-                sh 'oc start-build hello-openshift'
-            }
-        }
+        // stage("Openshift Build") {
+        //     steps {
+        //         sh 'oc start-build hello-openshift'
+        //     }
+        // }
     }
 }
